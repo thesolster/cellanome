@@ -15,18 +15,29 @@ interface ChatWidgetProps {
   currentSection?: string;
 }
 
+// Generate a session ID for chat tracking
+const getSessionId = () => {
+  let sessionId = sessionStorage.getItem('cellanome-chat-session');
+  if (!sessionId) {
+    sessionId = `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    sessionStorage.setItem('cellanome-chat-session', sessionId);
+  }
+  return sessionId;
+};
+
 export function ChatWidget({ currentSection }: ChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
       role: 'assistant',
-      content: 'Hi! I can help answer questions about the Cellanome investment research. What would you like to know?',
+      content: "Hi! I'm the Cellanome Research Assistant. I can answer questions about the company's technology, team, funding, market opportunity, competitive landscape, and investment thesis. What would you like to know?",
       timestamp: new Date()
     }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [sessionId] = useState(getSessionId);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -59,8 +70,8 @@ export function ChatWidget({ currentSection }: ChatWidgetProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           message: input,
-          context: currentSection,
-          history: messages.slice(-5) // Last 5 messages for context
+          sessionId,
+          context: currentSection
         })
       });
 
