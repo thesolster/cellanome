@@ -11,6 +11,7 @@ import {
   LineChart, Line, PieChart, Pie, Cell, Legend, RadarChart, Radar, PolarGrid,
   PolarAngleAxis, PolarRadiusAxis
 } from "recharts";
+import { ChatWidget } from "../components/ChatWidget";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663472641300/K5mWdhyLJsTfXciYHgwbMq/cellanome_hero-Z5CRFUWvdk3eJsaaRZJvz7.webp";
 const TECH_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663472641300/K5mWdhyLJsTfXciYHgwbMq/cellanome_tech_diagram-2REzjCi5HMh9zj4RzL6fgg.webp";
@@ -745,6 +746,9 @@ export default function Home() {
           </footer>
         </main>
       </div>
+      
+      {/* AI Chat Widget */}
+      <ChatWidget currentSection={activeSection} />
     </div>
   );
 }
