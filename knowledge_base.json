@@ -1,0 +1,430 @@
+{
+  "company": {
+    "name": "Cellanome, Inc.",
+    "founded": "2020",
+    "headquarters": "Foster City, California",
+    "industry": "Life Sciences Technology / Single-Cell Analysis",
+    "status": "Private Company (Commercial Launch - Early)",
+    "employees": "~105",
+    "total_raised": "$213M+",
+    "mission": "To build a foundational platform that connects the dynamic behavior of living cells to their underlying molecular identities — at the scale and resolution needed to transform drug discovery, cell therapy, and basic research.",
+    "one_liner": "A foundational platform for live-cell biology — bridging the gap between what cells do and what they express, at unprecedented scale."
+  },
+  "sections": [
+    {
+      "id": "executive-summary",
+      "title": "Executive Summary",
+      "subtitle": "The Missing Link in Cell Biology",
+      "content": "Cellanome is a Foster City, California-based life sciences technology company founded in 2020 with a singular mission: to build a foundational platform that connects the dynamic behavior of living cells to their underlying molecular identities — at the scale and resolution needed to transform drug discovery, cell therapy, and basic research.\n\nFor decades, biology has faced a fundamental trade-off: you can either watch what a cell does (live imaging), or read what it expresses (sequencing) — but not both, on the same cell. Cellanome's CellCage™ technology and the R3200 platform eliminate this trade-off by encapsulating individual live cells in semi-permeable hydrogel compartments, enabling longitudinal observation followed by whole-transcriptome sequencing of the exact same cells.",
+      "key_quote": {
+        "text": "Cellanome allows researchers to observe live cells in action, measure their functional responses, and then molecularly dissect their identities — creating a unified, high-dimensional dataset that was previously impossible to generate.",
+        "source": "Premji Invest, May 2025"
+      },
+      "key_stats": {
+        "total_raised": "$213M+",
+        "series_b": "$150M",
+        "patents_granted": 7,
+        "employees": 105
+      }
+    },
+    {
+      "id": "technology",
+      "title": "Technology",
+      "subtitle": "The R3200 Platform & CellCage™ Technology",
+      "content": "The R3200 is Cellanome's flagship automated cell analysis instrument. It integrates fluorescent imaging, AI-powered cell segmentation, and micro-3D printing to build customized CellCage™ enclosures around individual cells or co-cultures — all within a flow cell that is subsequently used for RNA sequencing.",
+      "how_it_works": [
+        {
+          "stage": 1,
+          "title": "Encapsulation",
+          "description": "Cells are loaded onto a flow cell. The R3200 uses photopolymerization — focused light — to form semi-permeable hydrogel walls (CellCages) around individual cells or co-cultures in real time. Each cage is sub-nanoliter in volume."
+        },
+        {
+          "stage": 2,
+          "title": "Live Observation",
+          "description": "The semi-permeable cage allows media, nutrients, drugs, and reagents to flow freely in and out. Cells are imaged over time — tracking division, morphology, secretion, cytotoxicity, and cell-cell interactions."
+        },
+        {
+          "stage": 3,
+          "title": "Molecular Profiling",
+          "description": "After functional observation, cells are lysed in situ. RNA is captured by spatial barcodes on the flow cell surface, enabling the transcriptome of each specific cell to be computationally linked back to its cage and imaging history."
+        }
+      ],
+      "key_differentiators": [
+        {
+          "feature": "Semi-permeable hydrogel shell",
+          "description": "Retains cells & macromolecules; freely passes media, enzymes, primers"
+        },
+        {
+          "feature": "Photopolymerization",
+          "description": "Light-triggered, spatially precise cage formation around selected cells"
+        },
+        {
+          "feature": "AI cell segmentation",
+          "description": "Automated identification and targeting of individual cells or clusters"
+        },
+        {
+          "feature": "Spatial barcoding",
+          "description": "Each cage position linked to unique DNA barcode for computational tracing"
+        },
+        {
+          "feature": "Multi-step workflows",
+          "description": "Sequential reagent exchange without material loss — enables complex assays"
+        },
+        {
+          "feature": "Cloud analytics platform",
+          "description": "Integrated data analysis linking imaging phenotypes to transcriptomic data"
+        }
+      ],
+      "scientific_validation": "The underlying capsule technology was independently validated in a landmark paper published in Science (Mazelis et al., Harvard Medical School, December 2025). The study demonstrated that semi-permeable capsules (CAGEs) enable high-throughput multistep assays combining live-cell culture with genome-wide readouts — increasing the number of colonies analyzed by ~1,000× over previous well-based methods."
+    },
+    {
+      "id": "team",
+      "title": "Team & Leadership",
+      "subtitle": "The Illumina Alumni Network",
+      "content": "Cellanome's leadership team is arguably one of the most experienced groups in the life sciences tools industry. The founding team and key executives are largely alumni of Illumina — the company that defined and dominated the DNA sequencing market for two decades. This is the same team that took sequencing from a $1,000 genome to a $100 genome.",
+      "leadership": [
+        {
+          "name": "Omead Ostadan",
+          "role": "CEO",
+          "prior_role": "Chief Product & Marketing Officer, Illumina",
+          "focus": "Commercial scale-up, go-to-market strategy"
+        },
+        {
+          "name": "Mostafa Ronaghi, Ph.D.",
+          "role": "Co-founder & Board Member",
+          "prior_role": "CTO, Illumina (2008–2021); Inventor of pyrosequencing",
+          "focus": "Technology vision, scientific strategy"
+        },
+        {
+          "name": "Jay Flatley",
+          "role": "Board Chair",
+          "prior_role": "CEO & Executive Chairman, Illumina",
+          "focus": "Strategic guidance, investor relations"
+        },
+        {
+          "name": "Gary Schroth, Ph.D.",
+          "role": "Chief Science Officer",
+          "prior_role": "Distinguished Scientist, Illumina",
+          "focus": "Multi-omics applications, scientific publications"
+        }
+      ]
+    },
+    {
+      "id": "funding",
+      "title": "Funding",
+      "subtitle": "$213M+ Raised from Elite Investors",
+      "content": "Cellanome has raised over $213 million across three funding rounds. The $150M Series B in January 2024 — led by Premji Invest and DFJ Growth — was one of the largest private life sciences tools rounds of the year, reflecting strong conviction in the team and technology.",
+      "rounds": [
+        {
+          "round": "Seed/Series A",
+          "year": "2020–22",
+          "amount": "$63M",
+          "investors": ["8VC", "DCVC", "SV Angel"]
+        },
+        {
+          "round": "Series B",
+          "year": "January 2024",
+          "amount": "$150M",
+          "investors": ["Premji Invest", "DFJ Growth", "Wing VC"]
+        },
+        {
+          "round": "Series C",
+          "year": "2025–26",
+          "amount": "~$90M",
+          "status": "Ongoing"
+        }
+      ],
+      "investors": [
+        {
+          "name": "Premji Invest",
+          "type": "Lead, Series B",
+          "description": "Azim Premji's family office; long-term patient capital"
+        },
+        {
+          "name": "DFJ Growth",
+          "type": "Lead, Series B",
+          "description": "Tier-1 growth equity; backed SpaceX, Tesla, Skype"
+        },
+        {
+          "name": "Wing Venture Capital",
+          "type": "Series B",
+          "description": "Enterprise tech focus; deep science expertise"
+        },
+        {
+          "name": "8VC",
+          "type": "Early Stage",
+          "description": "Joe Lonsdale's firm; life sciences & deep tech"
+        },
+        {
+          "name": "DCVC",
+          "type": "Early Stage",
+          "description": "Data Collective; computational biology focus"
+        },
+        {
+          "name": "SV Angel",
+          "type": "Seed",
+          "description": "Ron Conway's firm; legendary early-stage investor"
+        }
+      ]
+    },
+    {
+      "id": "market",
+      "title": "Market Opportunity",
+      "subtitle": "A Rapidly Expanding Multi-Billion Dollar Market",
+      "content": "Cellanome operates at the intersection of two of the fastest-growing segments in life sciences tools: single-cell analysis and multi-omics. The single-cell analysis market was valued at ~$4.3B in 2024, growing at a CAGR of 10–15%. The broader multi-omics market is projected to reach $13.2B by 2035.",
+      "market_size": [
+        {"year": "2022", "single_cell": "$3.1B", "multi_omics": "$4.2B"},
+        {"year": "2023", "single_cell": "$3.6B", "multi_omics": "$5.1B"},
+        {"year": "2024", "single_cell": "$4.3B", "multi_omics": "$6.2B"},
+        {"year": "2025", "single_cell": "$5.0B", "multi_omics": "$7.5B"},
+        {"year": "2026E", "single_cell": "$5.8B", "multi_omics": "$8.9B"},
+        {"year": "2028E", "single_cell": "$7.8B", "multi_omics": "$11.5B"},
+        {"year": "2030E", "single_cell": "$10.8B", "multi_omics": "$13.2B"}
+      ],
+      "metrics": {
+        "single_cell_cagr": "10–15%",
+        "multi_omics_2035": "$13.2B",
+        "key_drivers": ["AI + Drug Discovery", "Pharma R&D", "Cell Therapy"],
+        "tam": "Pharma, biotech, academic, agricultural"
+      }
+    },
+    {
+      "id": "competition",
+      "title": "Competitive Landscape",
+      "subtitle": "A Differentiated Position in a Crowded Space",
+      "content": "Cellanome operates in the single-cell analysis and live-cell biology space alongside several well-funded competitors. However, its unique combination of live-cell tracking, transcriptomics, and cell-cell interaction analysis creates a differentiated position that no single competitor currently replicates.",
+      "competitors": [
+        {
+          "company": "Cellanome",
+          "technology": "CellCage™ hydrogel + sequencing",
+          "live_cell": "Full",
+          "transcriptomics": "Full",
+          "cell_interaction": "Full",
+          "weakness": "Early commercialization stage"
+        },
+        {
+          "company": "10x Genomics",
+          "technology": "Droplet microfluidics (Chromium, Xenium)",
+          "live_cell": "Partial (Xenium)",
+          "transcriptomics": "Full",
+          "cell_interaction": "Limited",
+          "weakness": "Destructive; no live-cell tracking"
+        },
+        {
+          "company": "Bruker/Berkeley Lights",
+          "technology": "Optofluidic cell isolation (Beacon)",
+          "live_cell": "Full",
+          "transcriptomics": "Limited",
+          "cell_interaction": "Partial",
+          "weakness": "Low throughput; limited sequencing"
+        },
+        {
+          "company": "Parse Biosciences",
+          "technology": "Split-pool barcoding (EVERCODE)",
+          "live_cell": "None",
+          "transcriptomics": "Full",
+          "cell_interaction": "None",
+          "weakness": "No live-cell or imaging capability"
+        },
+        {
+          "company": "ThinkCyte",
+          "technology": "AI label-free sorting (VisionSort)",
+          "live_cell": "Partial",
+          "transcriptomics": "Limited",
+          "cell_interaction": "None",
+          "weakness": "No deep sequencing integration"
+        }
+      ],
+      "capability_scores": {
+        "Cellanome": {"live_cell_tracking": 95, "transcriptomics": 90, "throughput": 80, "multi_modal": 92, "cell_interaction": 90, "ip_moat": 85},
+        "10x Genomics": {"live_cell_tracking": 20, "transcriptomics": 95, "throughput": 85, "multi_modal": 60, "cell_interaction": 15, "ip_moat": 90},
+        "Bruker/Berkeley": {"live_cell_tracking": 70, "transcriptomics": 40, "throughput": 50, "multi_modal": 55, "cell_interaction": 65, "ip_moat": 70},
+        "Parse Bio": {"live_cell_tracking": 10, "transcriptomics": 88, "throughput": 90, "multi_modal": 35, "cell_interaction": 5, "ip_moat": 50}
+      }
+    },
+    {
+      "id": "patents",
+      "title": "Patents & IP",
+      "subtitle": "A Growing Patent Portfolio",
+      "content": "Cellanome has been aggressively building its intellectual property portfolio since its founding. The company has been granted 7 US patents and has filed multiple PCT applications, with key inventors including Tarun Kumar Khurana, Ali Agah, Yir-Shyuan Wu, and Filiz Gorpe Yasar.",
+      "patents": [
+        {"year": "2022", "number": "US 11,554,370", "title": "Devices and methods for analyzing biological samples (foundational)", "type": "Grant"},
+        {"year": "2024", "number": "US 12,151,242", "title": "Selective photopolymerization energy delivery for polymer matrix generation", "type": "Grant"},
+        {"year": "2025 (Apr)", "number": "US 12,440,837", "title": "Fluidic device analyte processing with optical energy source", "type": "Grant"},
+        {"year": "2025 (Nov)", "number": "WO 2025/229401", "title": "Systems for screening biological components using hydrogel chambers", "type": "PCT"},
+        {"year": "2026 (Mar)", "number": "US 12,569,847", "title": "Detecting intercellular interactions of cells in compartments", "type": "Grant"},
+        {"year": "2026 (Mar)", "number": "US 12,576,399", "title": "Imaging and analyzing a cell in a compartment of a fluidic device", "type": "Grant"},
+        {"year": "2026 (Mar)", "number": "US 12,576,400", "title": "Incubating and analyzing a cell in a compartment of a fluidic device", "type": "Grant"}
+      ],
+      "coverage_areas": ["Core photopolymerization process", "Cell encapsulation methods", "Imaging-sequencing integration", "Cell interaction detection"]
+    },
+    {
+      "id": "publications",
+      "title": "Scientific Publications",
+      "subtitle": "Peer-Reviewed Validation",
+      "content": "Cellanome's technology has been independently validated in top-tier scientific journals and presented at major conferences including AGBT, AACR, and JITC.",
+      "publications": [
+        {
+          "title": "Multi-step genomics on single cells and live cultures in sub-nanoliter capsules",
+          "journal": "Science",
+          "volume": "Vol. 391, Issue 6790",
+          "date": "December 2025",
+          "authors": "Mazelis et al., Harvard Medical School",
+          "key_finding": "Landmark independent validation of semi-permeable capsule technology. ~1,000× more colonies analyzed than well-based methods."
+        },
+        {
+          "title": "High-throughput single-cell omics using semipermeable capsules",
+          "journal": "Science",
+          "volume": "Vol. 391",
+          "date": "March 2026",
+          "authors": "Baronas et al.",
+          "key_finding": "Co-submitted companion paper demonstrating scRNA-seq of acute myeloid leukemia patient samples, uncovering distinct leukemic cell phenotypes."
+        },
+        {
+          "title": "Establishing a multi-modal, cell therapy characterization workflow to identify cell subsets with heightened cytotoxicity",
+          "journal": "Cancer Research (AACR)",
+          "volume": "Vol. 85, Supplement",
+          "date": "April 2025",
+          "authors": "Houston Methodist Research Institute",
+          "key_finding": "Demonstrated Cellanome's ability to identify cytotoxic T-cells (~85% accuracy) comparable to flow cytometry, while also capturing molecular identity."
+        },
+        {
+          "title": "Leveraging a novel, multi-modal platform to identify drug resistant clones with distinct mechanisms of resistance to EGFR inhibitors",
+          "journal": "JITC",
+          "volume": "Supplement 2",
+          "date": "2025",
+          "authors": "Li et al.",
+          "key_finding": "Used the R3200 platform to identify drug-resistant cancer cell clones and their molecular mechanisms of resistance — a key pharmaceutical use case."
+        },
+        {
+          "title": "Unveiling genes in dendritic cells that enhance T cell priming through functional multiplexed single cell-cell interaction analysis",
+          "journal": "JITC",
+          "volume": "Supplement 2",
+          "date": "2025",
+          "authors": "Valente et al.",
+          "key_finding": "Demonstrated CellCage enclosures for co-culture of dendritic cells and T-cells to study immune cell interactions at single-cell resolution."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "title": "Application Areas",
+      "subtitle": "Broad Applicability Across Biology",
+      "content": "The R3200 platform is designed as a horizontal tool — applicable across multiple research domains wherever understanding the link between cellular behavior and molecular identity is valuable.",
+      "areas": [
+        {
+          "area": "Immuno-oncology",
+          "description": "Identify cytotoxic T-cells by observing tumor-killing behavior, then sequence only the effective cells — dramatically improving CAR-T and TCR therapy development."
+        },
+        {
+          "area": "Drug Resistance",
+          "description": "Observe how cancer cell clones respond to EGFR inhibitors over time, then sequence resistant clones to identify the molecular mechanisms of resistance."
+        },
+        {
+          "area": "Cell Therapy QC",
+          "description": "Multi-modal characterization of cell therapy products — linking functional potency to transcriptomic identity for regulatory submissions."
+        },
+        {
+          "area": "Epigenetics",
+          "description": "Measure the persistence of gene expression programs across tens of thousands of expanding clones — 1000× more colonies than well-based methods."
+        },
+        {
+          "area": "Dendritic Cell Biology",
+          "description": "Unveil genes in dendritic cells that enhance T-cell priming through functional multiplexed single cell-cell interaction analysis."
+        },
+        {
+          "area": "Stem Cell Research",
+          "description": "Long-term clonal expansion of human iPSCs and mouse hematopoietic stem cells within CellCage enclosures, followed by transcriptomic profiling."
+        }
+      ]
+    },
+    {
+      "id": "commercialization",
+      "title": "Commercialization",
+      "subtitle": "From Stealth to Commercial Launch",
+      "content": "After operating in stealth mode for four years, Cellanome began publicly showcasing its platform at scientific conferences in late 2024 and 2025. The company is now in active commercialization, with R3200 instruments installed at customer sites in the US and Europe.",
+      "timeline": [
+        {"date": "2020", "event": "Company founded by Mostafa Ronaghi and team; operating in stealth"},
+        {"date": "January 2024", "event": "$150M Series B raised; company begins limited public disclosure"},
+        {"date": "January 2025", "event": "Mostafa Ronaghi appears on Timmerman Report podcast; first public interview"},
+        {"date": "December 2025", "event": "CEO Omead Ostadan debuts on Mendelspod podcast; R3200 platform officially launched"},
+        {"date": "December 2025", "event": "Landmark Science paper validates capsule technology (Harvard Medical School)"},
+        {"date": "January 2026", "event": "Matthew Spitzer and Pier Federico Gherardini discuss using CellCage for immune cell research (Mendelspod)"},
+        {"date": "March 2026", "event": "First European R3200 installation at VIB Technologies, Ghent, Belgium"},
+        {"date": "March 2026", "event": "Cellanome showcases platform at AGBT 2026; multiple posters and presentations"},
+        {"date": "April 2026", "event": "AACR Annual Meeting — Poster #4287 in Immunology: CAR T Cell Functional Enhancement Session"}
+      ]
+    },
+    {
+      "id": "risks",
+      "title": "Risks & Considerations",
+      "subtitle": "Key Risk Factors",
+      "risks": [
+        {
+          "risk": "Early Commercialization Risk",
+          "level": "High",
+          "description": "The R3200 is newly launched. Customer adoption, instrument reliability, and reagent consumable revenue are unproven at scale. Workflow integration into existing lab pipelines may be slower than expected."
+        },
+        {
+          "risk": "Competition from 10x Genomics",
+          "level": "Medium",
+          "description": "10x Genomics has dominant market share, a large installed base, and is actively developing live-cell imaging integrations (Xenium). They have significant resources to compete."
+        },
+        {
+          "risk": "Technology Complexity",
+          "level": "Medium",
+          "description": "The CellCage workflow is more complex than droplet-based methods. Researcher adoption requires training and workflow changes. Simplicity is a key selling point of competitors."
+        },
+        {
+          "risk": "Funding Runway",
+          "level": "Medium",
+          "description": "With $213M raised and ~105 employees, the company needs continued capital to scale manufacturing, sales, and support. Series C terms and timeline are unclear."
+        },
+        {
+          "risk": "Regulatory / Reimbursement (Clinical)",
+          "level": "Low",
+          "description": "If Cellanome pursues clinical diagnostics applications, FDA regulatory pathways add significant time and cost. Current focus is research-use-only (RUO)."
+        },
+        {
+          "risk": "Key Person Risk",
+          "level": "Low",
+          "description": "The company's credibility is closely tied to Mostafa Ronaghi and Jay Flatley. Their continued involvement is important for investor and customer confidence."
+        }
+      ]
+    },
+    {
+      "id": "investment-thesis",
+      "title": "Investment Thesis",
+      "subtitle": "Why Cellanome Could Be the Next Illumina",
+      "content": "The bull case for Cellanome rests on a simple but powerful analogy: just as Illumina's sequencing platform became the indispensable tool for genomics research, Cellanome's R3200 has the potential to become the indispensable tool for the next generation of cell biology research — one that is increasingly focused on understanding cellular dynamics, not just static snapshots.\n\nThe convergence of AI-driven drug discovery, cell therapy development, and functional genomics creates a massive and growing demand for exactly the kind of data that Cellanome generates. The company has the right team (Illumina veterans), the right technology (independently validated in Science), the right IP (7 granted patents), and the right investors (Premji, DFJ, Wing) to execute on this vision.",
+      "ratings": {
+        "team": {"score": 5, "notes": "Best-in-class genomics veterans"},
+        "technology": {"score": 5, "notes": "Validated in Science; 7 patents"},
+        "market": {"score": 5, "notes": "$10B+ TAM by 2030"},
+        "differentiation": {"score": 4, "notes": "Unique; no direct competitor"},
+        "commercialization": {"score": 3, "notes": "Early stage; unproven at scale"},
+        "risk_reward": {"score": 4, "notes": "High potential, manageable risks"}
+      },
+      "bottom_line": "Cellanome represents a compelling investment opportunity in a company that is building foundational infrastructure for the next era of biology. The risks are real — commercialization is early, competition is fierce, and the technology is complex. But the team has done this before, the science is validated, and the market is enormous. For an investor with a 5–10 year horizon and appetite for life sciences tools, Cellanome deserves serious consideration."
+    }
+  ],
+  "sources": [
+    "Cellanome.com",
+    "Justia Patents",
+    "Science (DOI: 10.1126/science.ady7209)",
+    "Premji Invest Blog",
+    "DFJ Growth Blog",
+    "Timmerman Report",
+    "Mendelspod",
+    "GenomeWeb",
+    "AACR Cancer Research",
+    "JITC",
+    "Grand View Research",
+    "Precedence Research"
+  ],
+  "metadata": {
+    "report_date": "March 2026",
+    "generated_by": "Manus AI",
+    "disclaimer": "This report is prepared for informational purposes only and does not constitute investment advice. All data is sourced from publicly available information."
+  }
+}
