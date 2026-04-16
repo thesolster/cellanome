@@ -1,0 +1,234 @@
+/* 
+ * DESIGN SYSTEM: Editorial Life Sciences — "Nature Portfolio"
+ * Inspired by Nature, Cell, Science journals + McKinsey report design
+ * Primary: Deep Teal (#0d5c63), Accent: Warm Amber (#e8a020)
+ * Typography: Playfair Display (display) + DM Sans (body)
+ * Layout: Asymmetric editorial grid, generous whitespace, typography-led hierarchy
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.99 0.002 90);
+  --foreground: oklch(0.18 0.02 200);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 200);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 200);
+  --primary: oklch(0.38 0.08 195);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.96 0.005 195);
+  --secondary-foreground: oklch(0.38 0.08 195);
+  --muted: oklch(0.96 0.003 90);
+  --muted-foreground: oklch(0.5 0.02 200);
+  --accent: oklch(0.72 0.14 75);
+  --accent-foreground: oklch(0.18 0.04 75);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.9 0.005 200);
+  --input: oklch(0.9 0.005 200);
+  --ring: oklch(0.38 0.08 195);
+  --chart-1: oklch(0.38 0.08 195);
+  --chart-2: oklch(0.72 0.14 75);
+  --chart-3: oklch(0.55 0.1 195);
+  --chart-4: oklch(0.65 0.08 195);
+  --chart-5: oklch(0.82 0.1 75);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Editorial section number label */
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: oklch(0.38 0.08 195 / 0.12);
+    line-height: 1;
+    user-select: none;
+  }
+
+  /* Accent border left for callout cards */
+  .callout-card {
+    border-left: 4px solid oklch(0.72 0.14 75);
+    background: oklch(0.98 0.005 75 / 0.5);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  /* Teal section divider */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: oklch(0.38 0.08 195 / 0.2);
+  }
+
+  /* Stat card */
+  .stat-card {
+    background: oklch(1 0 0);
+    border: 1px solid oklch(0.9 0.005 200);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px oklch(0 0 0 / 0.06), 0 4px 12px oklch(0 0 0 / 0.04);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .stat-card:hover {
+    box-shadow: 0 4px 16px oklch(0 0 0 / 0.1), 0 8px 32px oklch(0 0 0 / 0.06);
+    transform: translateY(-2px);
+  }
+
+  /* Fade-up animation */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .animate-fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+  .animate-fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+  .animate-fade-up-delay-3 { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+  .animate-fade-up-delay-4 { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
+
+  /* Sticky nav */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background: oklch(0.99 0.002 90 / 0.92);
+    border-bottom: 1px solid oklch(0.9 0.005 200);
+  }
+
+  /* Timeline */
+  .timeline-item {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: oklch(0.38 0.08 195);
+    border: 2px solid oklch(0.38 0.08 195 / 0.3);
+  }
+
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1.25rem;
+    width: 2px;
+    bottom: -0.5rem;
+    background: oklch(0.38 0.08 195 / 0.2);
+  }
+
+  .timeline-item:last-child::after {
+    display: none;
+  }
+}
