@@ -1,4 +1,13 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
+// Simple Vercel API endpoint types
+interface VercelRequest {
+  method: string;
+  body: any;
+}
+
+interface VercelResponse {
+  status: (code: number) => VercelResponse;
+  json: (data: any) => void;
+}
 
 // Knowledge base about Cellanome
 const knowledgeBase = {
