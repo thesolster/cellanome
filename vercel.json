@@ -4,11 +4,17 @@
   "outputDirectory": "dist/public",
   "framework": null,
   "installCommand": "npm install --legacy-peer-deps",
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@3"
+    }
+  },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/v2", "destination": "/v2.html" },
     { "source": "/research", "destination": "/research.html" },
     { "source": "/agent", "destination": "/agent.html" },
+    { "source": "/stress-test", "destination": "/stress-test.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

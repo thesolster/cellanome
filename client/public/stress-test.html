@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stress Test</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; background: #f5f5f5; padding: 24px; line-height: 1.5; }
+    .container { max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 20px; margin-bottom: 16px; }
+    
+    textarea { width: 100%; height: 150px; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; margin-bottom: 12px; }
+    button { padding: 10px 20px; background: #0f5757; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+    button:hover { background: #0a4040; }
+    button:disabled { background: #999; }
+    
+    .finding { background: #fff; border-radius: 8px; padding: 16px; margin-top: 16px; border-left: 4px solid #ddd; }
+    .finding.high { border-left-color: #e53e3e; }
+    .finding.medium { border-left-color: #dd6b20; }
+    .finding.low { border-left-color: #38a169; }
+    
+    .severity { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+    .severity.high { background: #fed7d7; color: #c53030; }
+    .severity.medium { background: #feebc8; color: #c05621; }
+    .severity.low { background: #c6f6d5; color: #276749; }
+    
+    .quote { background: #f7f7f7; padding: 10px; border-left: 3px solid #0f5757; margin: 10px 0; font-style: italic; font-size: 14px; }
+    .problem { margin: 8px 0; font-size: 14px; }
+    .fix { background: #e6fffa; padding: 10px; border-radius: 4px; margin: 10px 0; font-size: 13px; }
+    .fix-label { font-weight: 600; font-size: 12px; color: #0f5757; margin-bottom: 4px; }
+    
+    .actions { margin-top: 12px; display: flex; gap: 8px; }
+    .actions button { padding: 6px 14px; font-size: 13px; }
+    .actions .skip { background: #e2e8f0; color: #4a5568; }
+    
+    .status { padding: 8px 12px; border-radius: 4px; margin-top: 8px; font-size: 13px; }
+    .status.success { background: #c6f6d5; color: #276749; }
+    .status.error { background: #fed7d7; color: #c53030; }
+    
+    #results { margin-top: 24px; }
+    .loading { text-align: center; padding: 20px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔬 Stress Test</h1>
+    <p style="margin-bottom: 16px; color: #666;">Paste a briefing from Claude/ChatGPT. We'll find issues and suggest fixes for the knowledge base.</p>
+    
+    <textarea id="briefing" placeholder="Paste the AI-generated briefing here..."></textarea>
+    <button onclick="analyze()" id="analyze-btn">Analyze Briefing</button>
+    
+    <div id="results"></div>
+  </div>
+  
+  <script>
+    const SECRET = new URLSearchParams(window.location.search).get('secret') || '';
+    
+    async function analyze() {
+      const briefing = document.getElementById('briefing').value.trim();
+      if (!briefing) return alert('Paste a briefing first');
+      
+      const btn = document.getElementById('analyze-btn');
+      const results = document.getElementById('results');
+      
+      btn.disabled = true;
+      btn.textContent = 'Analyzing...';
+      results.innerHTML = '<div class="loading">Finding issues...</div>';
+      
+      try {
+        const res = await fetch('/api/stress-test/analyze?secret=' + SECRET, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ content: briefing })
+        });
+        const data = await res.json();
+        
+        if (data.error) {
+          results.innerHTML = '<div class="status error">' + data.error + '</div>';
+          return;
+        }
+        
+        if (!data.findings || data.findings.length === 0) {
+          results.innerHTML = '<div class="status success">No issues found! The briefing looks clean.</div>';
+          return;
+        }
+        
+        results.innerHTML = data.findings.map((f, i) => `
+          <div class="finding ${f.severity}" id="finding-${i}">
+            <span class="severity ${f.severity}">${f.severity}</span>
+            <div class="quote">${escapeHtml(f.quote)}</div>
+            <div class="problem"><strong>Problem:</strong> ${escapeHtml(f.problem)}</div>
+            <div class="fix">
+              <div class="fix-label">Suggested fix for knowledge base:</div>
+              ${escapeHtml(f.suggested_fix)}
+            </div>
+            <div class="actions">
+              <button onclick="addFix(${i}, '${encodeURIComponent(f.suggested_fix)}')">Add to Knowledge Base</button>
+              <button class="skip" onclick="skip(${i})">Skip</button>
+            </div>
+          </div>
+        `).join('');
+        
+      } catch (e) {
+        results.innerHTML = '<div class="status error">Analysis failed: ' + e.message + '</div>';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Analyze Briefing';
+      }
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    async function addFix(index, encodedFix) {
+      const fix = decodeURIComponent(encodedFix);
+      const finding = document.getElementById('finding-' + index);
+      const actions = finding.querySelector('.actions');
+      
+      actions.innerHTML = '<span style="color: #666;">Adding...</span>';
+      
+      try {
+        const res = await fetch('/api/stress-test/add-fix?secret=' + SECRET, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fix })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          actions.innerHTML = '<div class="status success">✓ Added to knowledge base</div>';
+        } else {
+          actions.innerHTML = '<div class="status error">Failed: ' + (data.error || 'Unknown error') + '</div>';
+        }
+      } catch (e) {
+        actions.innerHTML = '<div class="status error">Failed: ' + e.message + '</div>';
+      }
+    }
+    
+    function skip(index) {
+      const finding = document.getElementById('finding-' + index);
+      finding.style.opacity = '0.5';
+      finding.querySelector('.actions').innerHTML = '<span style="color: #999;">Skipped</span>';
+    }
+  </script>
+</body>
+</html>
