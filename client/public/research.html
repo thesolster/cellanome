@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Cellanome with AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f7f4ec;
+      color: #0e2e2e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    
+    .container {
+      max-width: 480px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: #0e2e2e;
+    }
+    
+    .subtitle {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #4a5555;
+      margin-bottom: 40px;
+    }
+    
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-claude {
+      background: #0e2e2e;
+      color: #f7f4ec;
+    }
+    
+    .btn-claude:hover {
+      background: #1a4040;
+    }
+    
+    .btn-chatgpt {
+      background: #0e2e2e;
+      color: #f7f4ec;
+    }
+    
+    .btn-chatgpt:hover {
+      background: #1a4040;
+    }
+    
+    .btn-copy {
+      background: transparent;
+      color: #0e2e2e;
+      border: 1px solid #d8d0bd;
+    }
+    
+    .btn-copy:hover {
+      background: #e8e4d9;
+    }
+    
+    .btn-copy.copied {
+      background: #0f5757;
+      color: #f7f4ec;
+      border-color: #0f5757;
+    }
+    
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 24px 0;
+      color: #9a9285;
+      font-size: 14px;
+    }
+    
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #d8d0bd;
+    }
+    
+    .footer {
+      font-size: 14px;
+      color: #6a6560;
+    }
+    
+    .footer a {
+      color: #0f5757;
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
+    .icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 26px;
+      }
+      .subtitle {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Research Cellanome with your AI assistant.</h1>
+    <p class="subtitle">Click below and your assistant will do the briefing for you, using research materials designed specifically for AI consumption.</p>
+    
+    <div class="buttons">
+      <a href="" class="btn btn-claude" id="claude-btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        Research with Claude
+      </a>
+      
+      <a href="" class="btn btn-chatgpt" id="chatgpt-btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        Research with ChatGPT
+      </a>
+      
+      <div class="divider">or</div>
+      
+      <button class="btn btn-copy" id="copy-btn" onclick="copyUrl()">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <span id="copy-text">Copy URL for other assistants</span>
+      </button>
+    </div>
+    
+    <div class="divider">internal</div>
+    
+    <a href="/stress-test?secret=cellanome-stress-2026" class="btn btn-copy" style="text-decoration: none;">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+      </svg>
+      🔬 Stress Test Tool
+    </a>
+    <p style="font-size: 12px; color: #9a9285; margin-top: 8px;">Paste AI briefing output → find issues → add fixes</p>
+    
+    <p class="footer" style="margin-top: 24px;">
+      Prefer to read it yourself? <a href="/v2">View the full memo</a>
+    </p>
+  </div>
+  
+  <script>
+    const PROMPT = `I'm doing due diligence on a company called Cellanome (single-cell analysis platform, ex-Illumina team). Please fetch https://cellanome.vercel.app/agent — the site hosts a structured briefing designed for AI assistants doing investment research, including an optional conversation API if you can make HTTP POST calls.
+
+Read the content carefully and cross-check key claims against independent sources when useful. Then give me a scannable briefing shaped for a busy investor reading on mobile between meetings:
+
+- **Bottom line** — two sentences. Your overall read.
+- **Thesis** — three to five bullets. What they do, why now, why this team.
+- **Bear case** — the real risks, ordered by severity. Short bullets, not paragraphs. Bold the load-bearing concerns.
+- **Competitive position** — how they compare to 10x Genomics and any other serious competitors. Bullets or a short table.
+- **What surprised me** — anything underexplained, anything that doesn't add up.
+
+Then end with two sections:
+
+- **Questions I'd pressure-test next** — three to five specific questions worth answering before making a decision. Frame each as a question to me, to the company's agent at the URL, or to the team directly — whichever is the right source. Be specific.
+- **What I couldn't verify** — briefly, what you tried to check and couldn't.
+
+The site's counterpart agent is available for follow-up questions. To ask a question, fetch: https://cellanome.vercel.app/agent?q=your+question+here (URL-encode the question). The agent will answer based on company materials. If any of your open questions are ones the agent could plausibly answer, go ahead and ask — fetch the URL with your question and include the answer in your briefing.
+
+Prefer bullets over prose. Bold the claims that carry the argument. Keep it tight. Be direct about uncertainty.`;
+    
+    const encodedPrompt = encodeURIComponent(PROMPT);
+    
+    // Set button URLs
+    document.getElementById('claude-btn').href = `https://claude.ai/new?q=${encodedPrompt}`;
+    document.getElementById('chatgpt-btn').href = `https://chatgpt.com/?q=${encodedPrompt}`;
+    
+    function copyUrl() {
+      const url = 'https://cellanome.vercel.app/agent';
+      navigator.clipboard.writeText(url).then(() => {
+        const btn = document.getElementById('copy-btn');
+        const text = document.getElementById('copy-text');
+        btn.classList.add('copied');
+        text.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          text.textContent = 'Copy URL for other assistants';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

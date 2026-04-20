@@ -7,6 +7,8 @@
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/v2", "destination": "/v2.html" },
+    { "source": "/research", "destination": "/research.html" },
+    { "source": "/agent", "destination": "/agent.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
